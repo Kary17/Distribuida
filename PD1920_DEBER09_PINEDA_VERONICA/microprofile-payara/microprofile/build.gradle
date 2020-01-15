@@ -1,0 +1,20 @@
+plugins {
+   
+    id 'java-library'
+    id 'war'
+}
+
+repositories {
+       jcenter()
+}
+
+dependencies {
+	//microservices
+	compile group: 'org.eclipse.microprofile', name: 'microprofile', version: '3.2'
+	
+	//BD
+	compile group: 'org.postgresql', name: 'postgresql', version: '42.2.8'
+	
+	//Jackson
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.5'
+}
