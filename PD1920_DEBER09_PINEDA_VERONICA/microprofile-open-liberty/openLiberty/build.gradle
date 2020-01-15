@@ -1,0 +1,35 @@
+apply plugin: 'war'
+apply plugin: 'liberty'
+group = 'io.openliberty.guides'
+version = '1.0-SNAPSHOT'
+description = "Gradle guide"
+
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'net.wasdev.wlp.gradle.plugins:liberty-gradle-plugin:2.6.3'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+libertyRuntime group:'io.openliberty', name:'openliberty-runtime', version:'[19.0.0.12,)'
+
+//microservices
+	compile group: 'org.eclipse.microprofile', name: 'microprofile', version: '3.2'
+	
+	//BD
+	compile group: 'org.postgresql', name: 'postgresql', version: '42.2.8'
+	
+	//Jackson
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.5'
+    
+}
+
